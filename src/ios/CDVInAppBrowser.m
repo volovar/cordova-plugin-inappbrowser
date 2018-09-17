@@ -29,7 +29,12 @@
 #define    kInAppBrowserToolbarBarPositionTop @"top"
 
 #define    TOOLBAR_HEIGHT 44.0
-#define    STATUSBAR_HEIGHT 20.0
+// START IPHONE X FIX
+// The old STATUSBAR_HEIGHT value breaks on iPhone X
+// Changed to dynamically grab the height from statusBarFrame
+//#define    STATUSBAR_HEIGHT 20.0
+#define    STATUSBAR_HEIGHT [UIApplication sharedApplication].statusBarFrame.size.height
+// END IPHONE X FIX
 #define    LOCATIONBAR_HEIGHT 21.0
 #define    FOOTER_HEIGHT ((TOOLBAR_HEIGHT) + (LOCATIONBAR_HEIGHT))
 
